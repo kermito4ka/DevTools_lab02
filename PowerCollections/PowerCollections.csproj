@@ -5,5 +5,17 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Deterministic>false</Deterministic>
 	</PropertyGroup>
-
+	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>kermito4ka.PowerCollections</PackageId>
+		<VersionPrefix>0.0.2</VersionPrefix>
+		<VersionSuffix>beta</VersionSuffix>
+		<RepositoryUrl>https://nuget.pkg.github.com/kermito4ka/index.json</RepositoryUrl>
+		<Title>Wintellect.PowerCollections</Title>
+		<Company>Wintellect</Company>
+		<Product>Power Collections</Product>
+		<Description>The Power Collections group of collection classes</Description>
+		<Copyright>Copyright (c) 2004-2007, Wintellect</Copyright>
+	</PropertyGroup>
+	
 </Project>
