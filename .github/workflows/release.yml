@@ -26,7 +26,7 @@ jobs:
       run: dotnet pack PowerCollections\PowerCollections.csproj
 
     - name: nuget push
-      run: dotnet nuget push "PowerCollections\bin\Release\kermito4ka.PowerCollections.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/kermito4ka/index.json"
+      run: dotnet nuget push "PowerCollections\bin\Debug\kermito4ka.PowerCollections.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/kermito4ka/index.json"
       
     - name: getxml
       id: getxml
