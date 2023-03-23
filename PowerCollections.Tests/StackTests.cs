@@ -53,7 +53,7 @@ namespace Wintellect.PowerCollections.Tests
             stack.Push(2);
             topElement = stack.Top();
 
-            Assert.AreEqual(topElement, 2);
+            Assert.AreEqual(topElement, 10);
         }
 
         //метод поп забирает верхний элемент стэка
