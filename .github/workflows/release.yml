@@ -33,7 +33,7 @@ jobs:
       uses: mavrosxristoforos/get-xml-info@1.1.1
       with:
         xml-file: 'PowerCollections\PowerCollections.csproj'
-        xpath: '//Version'
+        xpath: '//VersionPrefix'
 
     - name: release
       uses: ncipollo/release-action@v1.12.0
