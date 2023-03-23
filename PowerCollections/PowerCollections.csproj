@@ -6,7 +6,7 @@
 		<Deterministic>false</Deterministic>
 	</PropertyGroup>
 	<PropertyGroup>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		
 		<PackageId>kermito4ka.PowerCollections</PackageId>
 		<VersionPrefix>0.0.2</VersionPrefix>
 		<VersionSuffix>beta</VersionSuffix>
