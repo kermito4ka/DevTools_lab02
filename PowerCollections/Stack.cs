@@ -6,7 +6,7 @@ using System.Linq;
 namespace Wintellect.PowerCollections
 {
 	public class Stack<T> : IEnumerable<T>
-	
+	{
 		private T[] Array;
 		public int capacity = 0;
 		public int count = 0;
