@@ -1,0 +1,43 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+
+    runs-on: windows-latest
+
+    permissions:
+      repository-projects: write
+      packages: write
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: nuget pack 
+      run: dotnet pack PowerCollections\PowerCollections.csproj
+
+    - name: nuget push
+      run: dotnet nuget push "PowerCollections\bin\Debug\kermito4ka.PowerCollections.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/kermito4ka/index.json" --skip-duplicate
+      
+    - name: getxml
+      id: getxml
+      uses: mavrosxristoforos/get-xml-info@1.1.1
+      with:
+        xml-file: 'PowerCollections\PowerCollections.csproj'
+        xpath: '//VersionPrefix'
+
+    - name: release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: 'PowerCollections\bin\Debug\kermito4ka.PowerCollections.${{ steps.getxml.outputs.info }}.nupkg'
+        tag: 'v${{ steps.getxml.outputs.info }}'
+        token:  ${{ secrets.GITHUB_TOKEN }} 
